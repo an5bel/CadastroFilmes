@@ -16,6 +16,15 @@ senha varchar(250),
 matricula varchar(250),
 contato varchar(250) );
 
+create table filme(
+id int auto_increment primary key,
+titulo varchar(250),
+diretor varchar(250),
+ano int,
+genero varchar (250),
+avaliacao decimal(16,2),
+poster varchar(250)
+);
 
 select * from atividade;
 -- script de criação do banco de dados
