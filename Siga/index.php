@@ -9,6 +9,7 @@
     <ul>
         <li><a href="Atividade/">Atividade</a></li>
         <li><a href="Usuario/">Usuário</a></li>
+        <li><a href="Filme/">Filme</a></li>
     </ul>
 </body>
 </html>
