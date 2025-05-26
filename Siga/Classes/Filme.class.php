@@ -75,6 +75,26 @@ class Filme {
                 $sql .= " WHERE titulo LIKE :info";
                 $params = [':info' => '%'.$info.'%'];
                 break;
+                $params = [];
+            case 3:
+                $sql .= " WHERE diretor LIKE :info";
+                $params = [':info' => '%'.$info.'%'];
+                break;
+                $params = [];
+            case 4:
+                $sql .= " WHERE ano LIKE :info";
+                $params = [':info' => '%'.$info.'%'];
+                break;
+                $params = [];
+            case 5:
+                $sql .= " WHERE genero LIKE :info";
+                $params = [':info' => '%'.$info.'%'];
+                break;
+                $params = [];
+            case 6:
+                $sql .= " WHERE avaliacao LIKE :info";
+                $params = [':info' => '%'.$info.'%'];
+                break;
             default:
                 $params = [];
         }
