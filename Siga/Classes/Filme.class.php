@@ -19,7 +19,6 @@ class Filme {
         $this->poster = $poster;
     }
 
-    // getters e setters
     public function getId(): int { return $this->id; }
     public function getTitulo(): string { return $this->titulo; }
     public function getDiretor(): string { return $this->diretor; }
