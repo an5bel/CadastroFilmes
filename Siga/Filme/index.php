@@ -12,7 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (isset($_FILES['poster']) && $_FILES['poster']['error'] == UPLOAD_ERR_OK) {
     $nomeArquivo = basename($_FILES['poster']['name']);
     $poster = $nomeArquivo;
-    move_uploaded_file($_FILES['poster']['tmp_name'], "../uploads/" .$nomeArquivo);
+    move_uploaded_file($_FILES['poster']['tmp_name'], "../uploads/" .$nomeArquivo); 
+}
 
     $acao = $_POST['acao'] ?? '';
     $filme = new Filme($id, $titulo, $diretor, $ano, $genero, $avaliacao, $poster);
