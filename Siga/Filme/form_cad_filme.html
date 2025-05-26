@@ -11,20 +11,26 @@
         <fieldset>
             <legend>Formulário</legend>
             <label for="id">Id:</label>
-            <input type="text" name="id" readonly value="{id}">
+            <input type="text" name="id" readonly value="{id}"><br>
+
             <label for="titulo">Título:</label>
-            <input type="text" name="titulo" value="{titulo}" required>
+            <input type="text" name="titulo" value="{titulo}" required><br>
+
             <label for="diretor">Diretor:</label>
-            <input type="text" name="diretor" value="{diretor}" required>
+            <input type="text" name="diretor" value="{diretor}" required><br>
+
             <label for="ano">Ano:</label>
-            <input type="number" name="ano" value="{ano}" required>
+            <input type="number" name="ano" value="{ano}" required><br>
+
             <label for="genero">Gênero:</label>
-            <input type="text" name="genero" value="{genero}" required>
+            <input type="text" name="genero" value="{genero}" required> <br>
+
             <label for="avaliacao">Avaliação (0-10):</label>
-            <input type="number" step="0.1" name="avaliacao" value="{avaliacao}" required>
+            <input type="number" step="0.1" name="avaliacao" value="{avaliacao}" required> <br>
+
             <label for="poster">Poster:</label>
-            <input type="file" name="poster">
-            {poster_link}
+            <input type="file" name="poster" value="{poster_img}"> <br><br>
+
             <button type="submit" name="acao" value="salvar">Salvar</button>
             <button type="submit" name="acao" value="excluir">Excluir</button>
             <input type="reset" value="Cancelar">

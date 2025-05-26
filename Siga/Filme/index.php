@@ -8,14 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $ano = intval($_POST['ano'] ?? 0);
     $genero = $_POST['genero'] ?? '';
     $avaliacao = floatval($_POST['avaliacao'] ?? 0);
-
-    if (!empty($_FILES['poster']['name'])) {
-        $destino = PATH_UPLOAD . 'uploads/' . basename($_FILES['poster']['name']);
-        move_uploaded_file($_FILES['poster']['tmp_name'], $destino);
-        $poster = 'uploads/' . basename($_FILES['poster']['name']);
-    } else {
-        $poster = $_POST['poster_atual'] ?? '';
-    }
+    $poster = ''; 
+        if (isset($_FILES['poster']) && $_FILES['poster']['error'] == UPLOAD_ERR_OK) {
+    $nomeArquivo = basename($_FILES['poster']['name']);
+    $poster = $nomeArquivo;
+    move_uploaded_file($_FILES['poster']['tmp_name'], "../uploads/" .$nomeArquivo);
 
     $acao = $_POST['acao'] ?? '';
     $filme = new Filme($id, $titulo, $diretor, $ano, $genero, $avaliacao, $poster);
@@ -42,10 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $form = str_replace('{genero}', $f->getGenero(), $form);
         $form = str_replace('{avaliacao}', $f->getAvaliacao(), $form);
         if ($f->getPoster()) {
-            $link = "<br><a href='" . $f->getPoster() . "' download>Download atual</a>";
+        $link = "<br><img src='{$f->getPoster()}' alt='Poster atual' style='width:100px;height:auto;'>";
         } else {
-            $link = '';
+        $link = '';
         }
+
         $form = str_replace('{poster_link}', $link, $form);
     } else {
         foreach(['id','titulo','diretor','ano','genero','avaliacao'] as $campo)
