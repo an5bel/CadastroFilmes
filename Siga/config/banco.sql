@@ -24,7 +24,6 @@ create table if not exists filme (
     genero varchar(250) not null,
     avaliacao decimal(3,1) not null,
     poster varchar(250)
-) ENGINE=InnoDB default CHARSET=utf8;
+) ENGINE=InnoDB default CHARSET=utf8; --qualquer caracter
 
 select * from atividade;
--- script de criação do banco de dados
