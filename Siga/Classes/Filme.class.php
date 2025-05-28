@@ -63,7 +63,7 @@ class Filme {
         ];
         return Database::executar($sql, $params) == true;
     }
-
+    //buscar
     public static function listar($tipo = 0, $info = ''): array {
         $sql = "SELECT * FROM filme";
         switch ($tipo) {
